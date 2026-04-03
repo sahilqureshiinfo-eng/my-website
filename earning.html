@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="EarnFlow Hub - Start earning money online today through freelancing, affiliate marketing, and digital products. Join 50,000+ earners worldwide.">
+<meta name="keywords" content="earn money online, freelancing, affiliate marketing, digital products, passive income">
+<title>EarnFlow Hub — Start Earning Online Today</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* =========================================
+   DESIGN TOKENS & RESET
+   ========================================= */
+:root {
+  --primary: #0ea5e9;
+  --primary-dark: #0284c7;
+  --primary-light: #e0f2fe;
+  --accent: #06b6d4;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-2: #f1f5f9;
+  --border: #e2e8f0;
+  --border-light: #f1f5f9;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow: 0 4px 16px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.10), 0 4px 16px rgba(0,0,0,0.06);
+  --shadow-primary: 0 8px 30px rgba(14,165,233,0.25);
+
+  --nav-h: 72px;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: inherit; border: none; outline: none; }
+input, textarea, select { font-family: inherit; outline: none; border: none; }
+ul { list-style: none; }
+
+/* =========================================
+   UTILITIES
+   ========================================= */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 2rem); }
+.section-pad { padding: clamp(4rem, 8vw, 7rem) 0; }
+.text-center { text-align: center; }
+.flex { display: flex; }
+.grid { display: grid; }
+.hidden { display: none !important; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px; border-radius: 999px;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
+}
+.badge-blue { background: var(--primary-light); color: var(--primary-dark); }
+.badge-green { background: #d1fae5; color: #065f46; }
+.badge-amber { background: #fef3c7; color: #92400e; }
+.badge-purple { background: #ede9fe; color: #5b21b6; }
+
+.tag {
+  display: inline-block; padding: 3px 10px;
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: 999px; font-size: 0.75rem; color: var(--text-secondary);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 24px; border-radius: var(--radius);
+  font-family: 'Sora', sans-serif; font-size: 0.88rem; font-weight: 600;
+  letter-spacing: 0.01em; transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--primary); color: #fff;
+  box-shadow: var(--shadow-primary);
+}
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 12px 40px rgba(14,165,233,0.35); }
+.btn-outline {
+  background: transparent; color: var(--primary);
+  border: 2px solid var(--primary);
+}
+.btn-outline:hover { background: var(--primary); color: #fff; }
+.btn-ghost { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+.btn-ghost:hover { background: rgba(255,255,255,0.22); }
+.btn-white { background: #fff; color: var(--primary); font-weight: 700; }
+.btn-white:hover { background: var(--primary-light); }
+.btn-sm { padding: 8px 16px; font-size: 0.8rem; }
+.btn-lg { padding: 16px 36px; font-size: 1rem; border-radius: var(--radius-lg); }
+.btn-full { width: 100%; }
+
+/* Section headers */
+.section-eyebrow {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.72rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--primary); margin-bottom: 0.75rem;
+}
+.section-title {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 800; line-height: 1.2;
+  color: var(--text-primary); margin-bottom: 1rem;
+}
+.section-sub {
+  font-size: 1.05rem; color: var(--text-secondary);
+  max-width: 560px; line-height: 1.7;
+}
+
+/* Cards */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+#navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  height: var(--nav-h);
+  background: rgba(248,250,252,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.3s;
+}
+#navbar.scrolled { box-shadow: var(--shadow); }
+
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.3rem;
+  color: var(--text-primary);
+}
+.logo-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-primary);
+}
+.logo-icon svg { width: 20px; height: 20px; fill: #fff; }
+.logo span { color: var(--primary); }
+
+.nav-links {
+  display: flex; align-items: center; gap: 2rem;
+}
+.nav-links a {
+  font-family: 'Sora', sans-serif; font-size: 0.88rem; font-weight: 500;
+  color: var(--text-secondary); transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--primary); }
+
+.nav-actions { display: flex; align-items: center; gap: 0.75rem; }
+
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; padding: 4px;
+}
+.hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--text-primary); border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.mobile-menu {
+  display: none; position: fixed;
+  top: var(--nav-h); left: 0; right: 0; bottom: 0;
+  background: var(--surface); z-index: 999;
+  padding: 2rem; flex-direction: column; gap: 1.5rem;
+  overflow-y: auto;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 600;
+  color: var(--text-primary); padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* =========================================
+   HERO
+   ========================================= */
+#home {
+  padding-top: calc(var(--nav-h) + 3rem);
+  padding-bottom: 0;
+  background: linear-gradient(160deg, #f0f9ff 0%, #e0f2fe 40%, #f8fafc 100%);
+  position: relative; overflow: hidden;
+}
+
+#home::before {
+  content: '';
+  position: absolute; top: -60px; right: -100px;
+  width: 700px; height: 700px;
+  background: radial-gradient(ellipse at center, rgba(14,165,233,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+#home::after {
+  content: '';
+  position: absolute; bottom: 0; left: -100px;
+  width: 500px; height: 400px;
+  background: radial-gradient(ellipse at center, rgba(6,182,212,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-wrap {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: center;
+  padding-bottom: 5rem;
+  position: relative; z-index: 1;
+}
+
+.hero-trust {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 1.5rem;
+}
+.trust-avatars { display: flex; }
+.trust-avatars span {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 2px solid #fff; display: flex; align-items: center;
+  justify-content: center; font-size: 0.9rem;
+  margin-left: -8px; background: var(--primary-light);
+}
+.trust-avatars span:first-child { margin-left: 0; }
+.trust-text { font-size: 0.85rem; color: var(--text-secondary); }
+.trust-text strong { color: var(--text-primary); }
+
+.hero-headline {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800; line-height: 1.12;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+.hero-headline .highlight {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 1.1rem; color: var(--text-secondary);
+  line-height: 1.7; margin-bottom: 2rem; max-width: 500px;
+}
+
+.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+
+.hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
+.h-stat { }
+.h-stat .num {
+  font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 800;
+  color: var(--text-primary);
+}
+.h-stat .lbl { font-size: 0.8rem; color: var(--text-muted); }
+
+/* Dashboard mockup */
+.hero-visual {
+  position: relative;
+}
+
+.dashboard-mock {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.dash-topbar {
+  background: linear-gradient(135deg, #0f172a, #1e3a5f);
+  padding: 1rem 1.25rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.dash-topbar-left { display: flex; align-items: center; gap: 10px; }
+.dash-dots { display: flex; gap: 6px; }
+.dash-dots span { width: 10px; height: 10px; border-radius: 50%; }
+.dash-dots span:nth-child(1) { background: #ef4444; }
+.dash-dots span:nth-child(2) { background: #f59e0b; }
+.dash-dots span:nth-child(3) { background: #10b981; }
+.dash-title { color: rgba(255,255,255,0.6); font-size: 0.75rem; font-family: 'Sora', sans-serif; }
+.dash-user { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.8); font-size: 0.75rem; }
+.dash-avatar { width: 26px; height: 26px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 0.65rem; color: #fff; font-weight: 700; }
+
+.dash-body { padding: 1.25rem; }
+
+.dash-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1rem; }
+.dash-card {
+  padding: 0.875rem; border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+.dash-card .dc-label { font-size: 0.65rem; color: var(--text-muted); font-family: 'Sora', sans-serif; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+.dash-card .dc-val { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--text-primary); }
+.dash-card .dc-change { font-size: 0.65rem; color: var(--success); }
+.dash-card.primary { background: linear-gradient(135deg, var(--primary), var(--accent)); border-color: transparent; }
+.dash-card.primary .dc-label, .dash-card.primary .dc-val, .dash-card.primary .dc-change { color: #fff; }
+
+.dash-chart-area {
+  background: var(--surface-2); border-radius: var(--radius);
+  padding: 0.875rem; margin-bottom: 1rem;
+}
+.dca-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.875rem; }
+.dca-header span { font-size: 0.75rem; font-family: 'Sora', sans-serif; font-weight: 600; color: var(--text-primary); }
+.dca-header small { font-size: 0.65rem; color: var(--success); }
+.chart-bars { display: flex; align-items: flex-end; gap: 6px; height: 60px; }
+.chart-bars .bar {
+  flex: 1; border-radius: 4px 4px 0 0;
+  background: linear-gradient(to top, var(--primary), var(--accent));
+  opacity: 0.7; transition: opacity 0.2s;
+}
+.chart-bars .bar:hover { opacity: 1; }
+.chart-bars .bar.active { opacity: 1; background: linear-gradient(to top, var(--primary), #38bdf8); }
+
+.dash-tasks { }
+.dt-title { font-size: 0.75rem; font-family: 'Sora', sans-serif; font-weight: 600; color: var(--text-primary); margin-bottom: 0.6rem; }
+.dt-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.5rem 0; border-bottom: 1px solid var(--border-light);
+  font-size: 0.72rem;
+}
+.dt-item:last-child { border-bottom: none; }
+.dt-name { color: var(--text-secondary); }
+.dt-amount { font-weight: 700; font-family: 'Sora', sans-serif; color: var(--success); }
+
+.float-notif {
+  position: absolute; bottom: -20px; left: -20px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 10px 14px;
+  box-shadow: var(--shadow-lg);
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.78rem; white-space: nowrap;
+  animation: floatBob 3s ease-in-out infinite;
+}
+.float-notif .notif-icon { font-size: 1.2rem; }
+.float-notif .notif-text { }
+.float-notif .notif-text strong { display: block; font-family: 'Sora', sans-serif; font-size: 0.8rem; color: var(--text-primary); }
+.float-notif .notif-text span { color: var(--text-muted); font-size: 0.7rem; }
+
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.float-badge {
+  position: absolute; top: 20px; right: -18px;
+  background: linear-gradient(135deg, var(--success), #34d399);
+  color: #fff; border-radius: var(--radius);
+  padding: 10px 14px; box-shadow: 0 8px 24px rgba(16,185,129,0.35);
+  font-family: 'Sora', sans-serif; font-size: 0.75rem; font-weight: 700;
+  text-align: center; animation: floatBob 3.5s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+.float-badge .fb-big { font-size: 1.2rem; display: block; }
+
+/* =========================================
+   HOW IT WORKS
+   ========================================= */
+#how {
+  background: var(--surface);
+}
+
+.steps-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2rem; position: relative; margin-top: 3rem;
+}
+.steps-grid::before {
+  content: '';
+  position: absolute; top: 40px; left: calc(16.66% + 20px); right: calc(16.66% + 20px);
+  height: 2px; background: linear-gradient(90deg, var(--primary), var(--accent));
+  z-index: 0;
+}
+
+.step-card {
+  text-align: center; padding: 2rem 1.5rem;
+  position: relative; z-index: 1;
+}
+.step-num {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff; font-family: 'Sora', sans-serif;
+  font-size: 1.5rem; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.25rem; box-shadow: var(--shadow-primary);
+}
+.step-title { font-family: 'Sora', sans-serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+.step-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65; }
+
+/* =========================================
+   EARN METHODS
+   ========================================= */
+#earn {
+  background: var(--bg);
+}
+
+.earn-tabs {
+  display: flex; gap: 0.5rem; flex-wrap: wrap;
+  margin: 2rem 0; padding: 6px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); width: fit-content;
+}
+.earn-tab {
+  padding: 8px 20px; border-radius: var(--radius);
+  font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600;
+  color: var(--text-secondary); background: transparent;
+  transition: all 0.2s;
+}
+.earn-tab.active { background: var(--primary); color: #fff; box-shadow: var(--shadow-primary); }
+.earn-tab:hover:not(.active) { background: var(--surface-2); color: var(--text-primary); }
+
+.earn-content { display: none; }
+.earn-content.active { display: block; }
+
+.gigs-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.gig-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  transition: all 0.25s;
+}
+.gig-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+
+.gig-header {
+  padding: 1.25rem 1.25rem 0;
+  display: flex; justify-content: space-between; align-items: flex-start;
+}
+.gig-icon {
+  width: 48px; height: 48px; border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+}
+.gig-earn {
+  text-align: right;
+}
+.gig-earn .earn-range { font-family: 'Sora', sans-serif; font-size: 0.95rem; font-weight: 800; color: var(--success); }
+.gig-earn .earn-period { font-size: 0.72rem; color: var(--text-muted); }
+
+.gig-body { padding: 1rem 1.25rem 1.25rem; }
+.gig-title { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem; }
+.gig-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem; }
+.gig-meta { display: flex; align-items: center; justify-content: space-between; }
+.gig-difficulty { display: flex; align-items: center; gap: 5px; font-size: 0.75rem; color: var(--text-muted); }
+.diff-dots { display: flex; gap: 3px; }
+.diff-dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+.diff-dots span.filled { background: var(--primary); }
+
+/* Affiliate offers */
+.affiliate-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+.aff-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 1.5rem;
+  display: flex; flex-direction: column; gap: 1rem;
+  transition: all 0.25s;
+}
+.aff-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+.aff-top { display: flex; align-items: center; gap: 12px; }
+.aff-logo {
+  width: 48px; height: 48px; border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; font-weight: 800;
+  font-family: 'Sora', sans-serif; color: #fff;
+}
+.aff-info h4 { font-family: 'Sora', sans-serif; font-size: 0.95rem; font-weight: 700; }
+.aff-info span { font-size: 0.78rem; color: var(--text-muted); }
+.aff-commission {
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--surface-2); border-radius: var(--radius); padding: 0.75rem 1rem;
+}
+.aff-commission .comm-val { font-family: 'Sora', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--success); }
+.aff-commission .comm-label { font-size: 0.75rem; color: var(--text-muted); }
+
+/* Digital products */
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+.product-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  transition: all 0.25s;
+}
+.product-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+.product-img {
+  height: 140px; display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem;
+}
+.product-body { padding: 1.25rem; }
+.product-title { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem; }
+.product-price {
+  display: flex; align-items: center; justify-content: space-between; margin-top: 0.75rem;
+}
+.product-price .price { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--primary); }
+.product-price .sales { font-size: 0.75rem; color: var(--text-muted); }
+
+/* =========================================
+   DASHBOARD SECTION (full preview)
+   ========================================= */
+#dashboard {
+  background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 100%);
+  color: #fff;
+}
+
+#dashboard .section-eyebrow { color: var(--accent); }
+#dashboard .section-title { color: #fff; }
+#dashboard .section-sub { color: rgba(255,255,255,0.65); }
+
+.dashboard-preview {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-xl); padding: 2rem; margin-top: 3rem;
+}
+
+.dp-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;
+}
+.dp-header h3 { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.1rem; }
+.dp-header small { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+
+.dp-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 2rem; }
+.dp-stat {
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg); padding: 1.25rem;
+}
+.dp-stat .ds-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+.dp-stat .ds-val { font-family: 'Sora', sans-serif; font-size: 1.6rem; font-weight: 800; color: #fff; }
+.dp-stat .ds-label { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+.dp-stat .ds-change { font-size: 0.75rem; color: var(--success); margin-top: 4px; }
+
+.dp-bottom { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; }
+
+.dp-transactions {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg); padding: 1.25rem;
+}
+.dp-trans-title { font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: rgba(255,255,255,0.8); }
+.trans-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.7rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.trans-item:last-child { border-bottom: none; }
+.trans-left { display: flex; align-items: center; gap: 10px; }
+.trans-icon { width: 34px; height: 34px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+.trans-name { font-size: 0.83rem; color: rgba(255,255,255,0.85); }
+.trans-date { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
+.trans-amount { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.9rem; }
+.trans-amount.credit { color: var(--success); }
+.trans-amount.debit { color: #f87171; }
+
+.dp-payout {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg); padding: 1.25rem;
+}
+.dp-payout-title { font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; color: rgba(255,255,255,0.8); }
+.payout-methods { display: flex; flex-direction: column; gap: 0.75rem; }
+.payout-method {
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius); padding: 0.75rem 1rem;
+}
+.pm-left { display: flex; align-items: center; gap: 10px; }
+.pm-icon { font-size: 1.2rem; }
+.pm-name { font-size: 0.82rem; color: rgba(255,255,255,0.8); font-family: 'Sora', sans-serif; font-weight: 500; }
+.pm-min { font-size: 0.68rem; color: rgba(255,255,255,0.4); }
+.pm-available { font-size: 0.72rem; color: var(--success); }
+
+.withdraw-btn {
+  margin-top: 1rem; width: 100%; padding: 12px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff; border-radius: var(--radius); border: none;
+  font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 700;
+  cursor: pointer; transition: all 0.2s; box-shadow: var(--shadow-primary);
+}
+.withdraw-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(14,165,233,0.4); }
+
+/* =========================================
+   PRICING
+   ========================================= */
+#pricing { background: var(--surface); }
+
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.pricing-card {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--radius-xl); padding: 2rem;
+  position: relative; transition: all 0.25s;
+}
+.pricing-card.featured {
+  background: linear-gradient(160deg, #0f172a, #1e3a5f);
+  border-color: transparent;
+  box-shadow: var(--shadow-lg);
+  transform: scale(1.03);
+}
+.pricing-card:hover:not(.featured) { box-shadow: var(--shadow-lg); }
+.pricing-badge {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff; padding: 4px 16px; border-radius: 999px;
+  font-family: 'Sora', sans-serif; font-size: 0.72rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap;
+}
+.plan-name { font-family: 'Sora', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 0.5rem; }
+.pricing-card.featured .plan-name { color: var(--accent); }
+.plan-price { font-family: 'Sora', sans-serif; font-size: 2.8rem; font-weight: 800; color: var(--text-primary); line-height: 1; }
+.pricing-card.featured .plan-price { color: #fff; }
+.plan-price sup { font-size: 1.2rem; vertical-align: top; margin-top: 8px; display: inline-block; }
+.plan-price sub { font-size: 0.9rem; font-weight: 400; color: var(--text-muted); }
+.pricing-card.featured .plan-price sub { color: rgba(255,255,255,0.5); }
+.plan-tagline { font-size: 0.85rem; color: var(--text-secondary); margin: 0.75rem 0 1.5rem; }
+.pricing-card.featured .plan-tagline { color: rgba(255,255,255,0.6); }
+.plan-features { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 2rem; }
+.plan-feature { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; color: var(--text-secondary); }
+.pricing-card.featured .plan-feature { color: rgba(255,255,255,0.75); }
+.plan-feature .fi { font-size: 0.85rem; }
+.plan-feature.has { color: var(--text-primary); }
+.pricing-card.featured .plan-feature.has { color: #fff; }
+
+/* =========================================
+   BLOG
+   ========================================= */
+#blog { background: var(--bg); }
+
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.blog-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  transition: all 0.25s; cursor: pointer;
+}
+.blog-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+.blog-img {
+  height: 160px; display: flex; align-items: center; justify-content: center;
+  font-size: 4rem; position: relative;
+}
+.blog-body { padding: 1.25rem; }
+.blog-meta { display: flex; align-items: center; gap: 0.75rem; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.75rem; }
+.blog-title { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1rem; line-height: 1.4; margin-bottom: 0.5rem; }
+.blog-excerpt { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65; }
+.blog-footer { padding: 0 1.25rem 1.25rem; display: flex; align-items: center; justify-content: space-between; }
+.blog-author { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--text-secondary); }
+.blog-author span { width: 26px; height: 26px; border-radius: 50%; background: var(--primary-light); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; }
+.read-more { font-family: 'Sora', sans-serif; font-size: 0.78rem; font-weight: 600; color: var(--primary); }
+
+/* =========================================
+   TESTIMONIALS
+   ========================================= */
+#testimonials { background: var(--surface); }
+
+.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.testi-card {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 1.75rem;
+}
+.testi-stars { color: var(--warning); font-size: 0.85rem; margin-bottom: 0.75rem; letter-spacing: 2px; }
+.testi-text { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+.testi-author { display: flex; align-items: center; gap: 10px; }
+.testi-avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 700; color: #fff; font-family: 'Sora', sans-serif; }
+.testi-name { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.88rem; }
+.testi-role { font-size: 0.75rem; color: var(--text-muted); }
+.testi-earning { font-family: 'Sora', sans-serif; font-weight: 800; color: var(--success); font-size: 0.85rem; margin-left: auto; }
+
+/* =========================================
+   AUTH MODAL
+   ========================================= */
+.modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 2000;
+  background: rgba(15,23,42,0.6); backdrop-filter: blur(6px);
+  align-items: center; justify-content: center; padding: 1rem;
+}
+.modal-overlay.open { display: flex; }
+
+.modal {
+  background: var(--surface); border-radius: var(--radius-xl);
+  width: 100%; max-width: 440px; padding: 2.5rem;
+  position: relative; box-shadow: var(--shadow-lg);
+  animation: modalIn 0.3s ease;
+}
+@keyframes modalIn { from { transform: scale(0.95) translateY(20px); opacity: 0; } to { transform: scale(1) translateY(0); opacity: 1; } }
+
+.modal-close {
+  position: absolute; top: 1.25rem; right: 1.25rem;
+  background: var(--surface-2); border: none; width: 32px; height: 32px;
+  border-radius: 50%; font-size: 1rem; color: var(--text-muted); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.modal-close:hover { background: var(--border); color: var(--text-primary); }
+
+.modal-logo { text-align: center; margin-bottom: 1.5rem; }
+.modal-logo .logo { display: inline-flex; justify-content: center; }
+
+.auth-tabs {
+  display: flex; gap: 0; margin-bottom: 2rem;
+  background: var(--surface-2); border-radius: var(--radius); padding: 4px;
+}
+.auth-tab {
+  flex: 1; padding: 8px; text-align: center;
+  font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600;
+  border-radius: calc(var(--radius) - 2px); transition: all 0.2s;
+  color: var(--text-muted); background: none;
+}
+.auth-tab.active { background: var(--surface); color: var(--text-primary); box-shadow: var(--shadow-sm); }
+
+.form-group { margin-bottom: 1.1rem; }
+.form-label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.4rem; font-family: 'Sora', sans-serif; }
+.form-input {
+  width: 100%; padding: 11px 14px;
+  background: var(--surface-2); border: 1.5px solid var(--border);
+  border-radius: var(--radius); font-size: 0.9rem; color: var(--text-primary);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(14,165,233,0.12); background: #fff; }
+.form-hint { font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; }
+
+.social-login { margin-top: 1.5rem; }
+.divider { display: flex; align-items: center; gap: 1rem; margin: 1.25rem 0; }
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.divider span { font-size: 0.78rem; color: var(--text-muted); }
+.social-btns { display: flex; gap: 0.75rem; }
+.social-btn {
+  flex: 1; padding: 10px; border: 1.5px solid var(--border); border-radius: var(--radius);
+  font-size: 0.85rem; font-weight: 600; font-family: 'Sora', sans-serif;
+  color: var(--text-secondary); background: var(--surface); cursor: pointer;
+  transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 6px;
+}
+.social-btn:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-light); }
+
+/* =========================================
+   CTA BANNER
+   ========================================= */
+.cta-banner {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  border-radius: var(--radius-xl); padding: clamp(2.5rem, 5vw, 4rem) clamp(2rem, 5vw, 4rem);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap; position: relative; overflow: hidden;
+  margin: 0 auto;
+}
+.cta-banner::before {
+  content: ''; position: absolute; right: -60px; top: -60px;
+  width: 300px; height: 300px; border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+}
+.cta-banner::after {
+  content: ''; position: absolute; left: -40px; bottom: -80px;
+  width: 250px; height: 250px; border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+.cta-text { position: relative; z-index: 1; }
+.cta-text h2 { font-family: 'Sora', sans-serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
+.cta-text p { color: rgba(255,255,255,0.8); font-size: 1rem; }
+.cta-actions { position: relative; z-index: 1; display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+  background: #0a1628;
+  color: rgba(255,255,255,0.6);
+  padding: 4rem 0 2rem;
+}
+
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.footer-brand .logo { color: #fff; margin-bottom: 1rem; }
+.footer-brand p { font-size: 0.88rem; line-height: 1.7; max-width: 280px; }
+.footer-social { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+.social-icon {
+  width: 36px; height: 36px; border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; transition: all 0.2s; cursor: pointer;
+}
+.social-icon:hover { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+.footer-col h4 { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.08em; color: #fff; margin-bottom: 1.25rem; }
+.footer-col ul { display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-col ul li a { font-size: 0.88rem; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--primary); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-bottom p { font-size: 0.82rem; }
+.footer-legal { display: flex; gap: 1.5rem; }
+.footer-legal a { font-size: 0.82rem; color: rgba(255,255,255,0.4); transition: color 0.2s; }
+.footer-legal a:hover { color: rgba(255,255,255,0.8); }
+
+/* =========================================
+   SCROLL ANIMATIONS
+   ========================================= */
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* =========================================
+   AD PLACEHOLDER
+   ========================================= */
+.ad-unit {
+  background: var(--surface-2); border: 2px dashed var(--border);
+  border-radius: var(--radius); padding: 1.5rem; text-align: center;
+  color: var(--text-muted); font-size: 0.8rem; font-family: 'Sora', sans-serif;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 1024px) {
+  .hero-wrap { grid-template-columns: 1fr; }
+  .float-badge { display: none; }
+  .dashboard-mock { max-width: 600px; }
+  .dp-stats { grid-template-columns: repeat(2, 1fr); }
+  .dp-bottom { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+  .pricing-card.featured { transform: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links, .nav-actions .btn-outline { display: none; }
+  .hamburger { display: flex; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .steps-grid::before { display: none; }
+  .blog-grid, .testi-grid { grid-template-columns: 1fr; }
+  .dash-cards { grid-template-columns: repeat(2, 1fr); }
+  .affiliate-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 1.25rem; }
+}
+@media (max-width: 520px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .dp-stats { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- ======= NAVBAR ======= -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="#home" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      Earn<span>Flow</span> Hub
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#earn">Earn</a></li>
+      <li><a href="#dashboard">Dashboard</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#blog">Blog</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn btn-outline btn-sm" onclick="openModal('login')">Log In</button>
+      <button class="btn btn-primary btn-sm" onclick="openModal('register')">Get Started Free</button>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="toggleMenu()">Home</a>
+  <a href="#how" onclick="toggleMenu()">How It Works</a>
+  <a href="#earn" onclick="toggleMenu()">Earn Money</a>
+  <a href="#dashboard" onclick="toggleMenu()">Dashboard</a>
+  <a href="#pricing" onclick="toggleMenu()">Pricing</a>
+  <a href="#blog" onclick="toggleMenu()">Blog</a>
+  <button class="btn btn-primary btn-full" onclick="openModal('register'); toggleMenu();">Get Started Free</button>
+</div>
+
+<!-- ======= HERO ======= -->
+<section id="home">
+  <div class="container">
+    <div class="hero-wrap">
+      <!-- Left -->
+      <div>
+        <div class="hero-trust">
+          <div class="trust-avatars">
+            <span>👩</span><span>👨</span><span>🧑</span><span>👩</span>
+          </div>
+          <div class="trust-text"><strong>50,000+</strong> earners worldwide</div>
+        </div>
+        <span class="badge badge-blue" style="margin-bottom:1.2rem;">🚀 &nbsp;#1 Online Earning Platform 2026</span>
+        <h1 class="hero-headline">
+          Start Earning<br>Online <span class="highlight">Today.</span><br>No Experience Needed.
+        </h1>
+        <p class="hero-sub">
+          Freelance, sell digital products, or earn through affiliate marketing — all from one powerful dashboard. Withdraw your earnings anytime.
+        </p>
+        <div class="hero-ctas">
+          <button class="btn btn-primary btn-lg" onclick="openModal('register')">
+            🎯 &nbsp;Start Earning Free
+          </button>
+          <a href="#how" class="btn btn-outline btn-lg">See How It Works</a>
+        </div>
+        <div class="hero-stats">
+          <div class="h-stat">
+            <div class="num">$2.4M+</div>
+            <div class="lbl">Paid to users</div>
+          </div>
+          <div class="h-stat">
+            <div class="num">50K+</div>
+            <div class="lbl">Active earners</div>
+          </div>
+          <div class="h-stat">
+            <div class="num">4.9★</div>
+            <div class="lbl">User rating</div>
+          </div>
+          <div class="h-stat">
+            <div class="num">3 min</div>
+            <div class="lbl">To get started</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Dashboard Mockup -->
+      <div class="hero-visual">
+        <div class="float-badge">
+          <span class="fb-big">💰</span>
+          $847 earned<br>this week
+        </div>
+        <div class="dashboard-mock">
+          <div class="dash-topbar">
+            <div class="dash-topbar-left">
+              <div class="dash-dots"><span></span><span></span><span></span></div>
+              <div class="dash-title">EarnFlow Dashboard</div>
+            </div>
+            <div class="dash-user">
+              <div class="dash-avatar">JS</div>
+              <span>Jane S.</span>
+            </div>
+          </div>
+          <div class="dash-body">
+            <div class="dash-cards">
+              <div class="dash-card primary">
+                <div class="dc-label">Total Earned</div>
+                <div class="dc-val">$3,284</div>
+                <div class="dc-change">↑ 18% this month</div>
+              </div>
+              <div class="dash-card">
+                <div class="dc-label">Pending</div>
+                <div class="dc-val">$342</div>
+                <div class="dc-change" style="color:var(--warning)">3 tasks</div>
+              </div>
+              <div class="dash-card">
+                <div class="dc-label">Withdrawn</div>
+                <div class="dc-val">$2,940</div>
+                <div class="dc-change">PayPal</div>
+              </div>
+            </div>
+            <div class="dash-chart-area">
+              <div class="dca-header">
+                <span>Weekly Earnings</span>
+                <small>↑ 23% vs last week</small>
+              </div>
+              <div class="chart-bars">
+                <div class="bar" style="height:35%"></div>
+                <div class="bar" style="height:55%"></div>
+                <div class="bar" style="height:45%"></div>
+                <div class="bar" style="height:70%"></div>
+                <div class="bar" style="height:60%"></div>
+                <div class="bar active" style="height:90%"></div>
+                <div class="bar" style="height:75%"></div>
+              </div>
+            </div>
+            <div class="dash-tasks">
+              <div class="dt-title">Recent Activity</div>
+              <div class="dt-item"><span class="dt-name">✍️ Logo Design — TechCorp</span><span class="dt-amount">+$120</span></div>
+              <div class="dt-item"><span class="dt-name">🔗 Affiliate — Shopify</span><span class="dt-amount">+$45.60</span></div>
+              <div class="dt-item"><span class="dt-name">📦 eBook Sale</span><span class="dt-amount">+$29</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="float-notif">
+          <div class="notif-icon">🎉</div>
+          <div class="notif-text">
+            <strong>Payment received!</strong>
+            <span>$185.00 via PayPal · just now</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= HOW IT WORKS ======= -->
+<section id="how" class="section-pad">
+  <div class="container text-center">
+    <div class="section-eyebrow">Simple Process</div>
+    <h2 class="section-title">Start earning in 3 easy steps</h2>
+    <p class="section-sub" style="margin:0 auto">No experience needed. No hidden fees. Just sign up, pick your earning method, and get paid.</p>
+
+    <div class="steps-grid reveal">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-title">Create Free Account</div>
+        <p class="step-desc">Sign up in under 3 minutes. No credit card required. Instant access to all earning opportunities.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-title">Choose How to Earn</div>
+        <p class="step-desc">Browse freelancing gigs, join affiliate programs, or sell your digital products on our marketplace.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-title">Get Paid Instantly</div>
+        <p class="step-desc">Withdraw your earnings to PayPal, bank transfer, or crypto. Minimum withdrawal just $10.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= EARN METHODS ======= -->
+<section id="earn" class="section-pad">
+  <div class="container">
+    <div class="section-eyebrow">Earning Methods</div>
+    <h2 class="section-title">Multiple ways to earn online</h2>
+    <p class="section-sub">Whether you're a designer, writer, marketer, or complete beginner — there's an opportunity for you.</p>
+
+    <!-- Ad Unit -->
+    <div class="ad-unit" style="margin:1.5rem 0; max-width:728px;">
+      📢 Advertisement — Google Ads Placement (728×90)
+    </div>
+
+    <div class="earn-tabs">
+      <button class="earn-tab active" onclick="switchTab('freelance', this)">💼 Freelancing</button>
+      <button class="earn-tab" onclick="switchTab('affiliate', this)">🔗 Affiliate</button>
+      <button class="earn-tab" onclick="switchTab('products', this)">📦 Digital Products</button>
+    </div>
+
+    <!-- Freelancing -->
+    <div id="tab-freelance" class="earn-content active">
+      <div class="gigs-grid">
+        <div class="gig-card">
+          <div class="gig-header">
+            <div class="gig-icon" style="background:#dbeafe;">🎨</div>
+            <div class="gig-earn"><div class="earn-range">$25–$150</div><div class="earn-period">per project</div></div>
+          </div>
+          <div class="gig-body">
+            <div class="gig-title">Logo & Brand Design</div>
+            <p class="gig-desc">Create logos, brand kits, and visual identities for businesses worldwide.</p>
+            <div class="gig-meta">
+              <div class="gig-difficulty">
+                <span>Skill:</span>
+                <div class="diff-dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span><span></span></div>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="openModal('register')">Apply Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="gig-card">
+          <div class="gig-header">
+            <div class="gig-icon" style="background:#d1fae5;">✍️</div>
+            <div class="gig-earn"><div class="earn-range">$15–$80</div><div class="earn-period">per article</div></div>
+          </div>
+          <div class="gig-body">
+            <div class="gig-title">Content Writing</div>
+            <p class="gig-desc">Write blog posts, website copy, and social media content for clients.</p>
+            <div class="gig-meta">
+              <div class="gig-difficulty">
+                <span>Skill:</span>
+                <div class="diff-dots"><span class="filled"></span><span class="filled"></span><span></span><span></span><span></span></div>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="openModal('register')">Apply Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="gig-card">
+          <div class="gig-header">
+            <div class="gig-icon" style="background:#fce7f3;">💻</div>
+            <div class="gig-earn"><div class="earn-range">$50–$500</div><div class="earn-period">per project</div></div>
+          </div>
+          <div class="gig-body">
+            <div class="gig-title">Web Development</div>
+            <p class="gig-desc">Build websites, landing pages, and web apps for businesses and startups.</p>
+            <div class="gig-meta">
+              <div class="gig-difficulty">
+                <span>Skill:</span>
+                <div class="diff-dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span></div>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="openModal('register')">Apply Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="gig-card">
+          <div class="gig-header">
+            <div class="gig-icon" style="background:#fef3c7;">📱</div>
+            <div class="gig-earn"><div class="earn-range">$20–$120</div><div class="earn-period">per account</div></div>
+          </div>
+          <div class="gig-body">
+            <div class="gig-title">Social Media Management</div>
+            <p class="gig-desc">Manage Instagram, TikTok, and LinkedIn accounts for growing brands.</p>
+            <div class="gig-meta">
+              <div class="gig-difficulty">
+                <span>Skill:</span>
+                <div class="diff-dots"><span class="filled"></span><span class="filled"></span><span></span><span></span><span></span></div>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="openModal('register')">Apply Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="gig-card">
+          <div class="gig-header">
+            <div class="gig-icon" style="background:#ede9fe;">🎬</div>
+            <div class="gig-earn"><div class="earn-range">$40–$200</div><div class="earn-period">per video</div></div>
+          </div>
+          <div class="gig-body">
+            <div class="gig-title">Video Editing</div>
+            <p class="gig-desc">Edit YouTube videos, reels, and promotional content for creators.</p>
+            <div class="gig-meta">
+              <div class="gig-difficulty">
+                <span>Skill:</span>
+                <div class="diff-dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span><span></span></div>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="openModal('register')">Apply Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="gig-card">
+          <div class="gig-header">
+            <div class="gig-icon" style="background:#ecfdf5;">🔍</div>
+            <div class="gig-earn"><div class="earn-range">$30–$180</div><div class="earn-period">per month</div></div>
+          </div>
+          <div class="gig-body">
+            <div class="gig-title">SEO Optimization</div>
+            <p class="gig-desc">Help businesses rank higher on Google with on-page and technical SEO.</p>
+            <div class="gig-meta">
+              <div class="gig-difficulty">
+                <span>Skill:</span>
+                <div class="diff-dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span><span></span></div>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="openModal('register')">Apply Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Affiliate -->
+    <div id="tab-affiliate" class="earn-content">
+      <div class="affiliate-grid">
+        <div class="aff-card">
+          <div class="aff-top">
+            <div class="aff-logo" style="background:linear-gradient(135deg,#96bf48,#5a8a1e);">S</div>
+            <div class="aff-info"><h4>Shopify</h4><span>eCommerce platform</span></div>
+          </div>
+          <p style="font-size:0.85rem;color:var(--text-secondary)">Earn recurring commissions by referring users to Shopify's 14-day free trial.</p>
+          <div class="aff-commission">
+            <div><div class="comm-val">$150</div><div class="comm-label">per referral</div></div>
+            <div><span class="badge badge-green">✓ Verified</span></div>
+          </div>
+          <button class="btn btn-outline btn-full" onclick="openModal('register')">Join Program</button>
+        </div>
+        <div class="aff-card">
+          <div class="aff-top">
+            <div class="aff-logo" style="background:linear-gradient(135deg,#ff9500,#e63000);">A</div>
+            <div class="aff-info"><h4>Amazon Associates</h4><span>Product marketplace</span></div>
+          </div>
+          <p style="font-size:0.85rem;color:var(--text-secondary)">Earn up to 10% commission on every product sold through your affiliate links.</p>
+          <div class="aff-commission">
+            <div><div class="comm-val">Up to 10%</div><div class="comm-label">commission rate</div></div>
+            <div><span class="badge badge-green">✓ Verified</span></div>
+          </div>
+          <button class="btn btn-outline btn-full" onclick="openModal('register')">Join Program</button>
+        </div>
+        <div class="aff-card">
+          <div class="aff-top">
+            <div class="aff-logo" style="background:linear-gradient(135deg,#635bff,#0a2540);">S</div>
+            <div class="aff-info"><h4>Stripe Partners</h4><span>Payment processing</span></div>
+          </div>
+          <p style="font-size:0.85rem;color:var(--text-secondary)">Refer businesses to Stripe and earn revenue share for each transaction processed.</p>
+          <div class="aff-commission">
+            <div><div class="comm-val">$50 + Rev</div><div class="comm-label">per activation</div></div>
+            <div><span class="badge badge-amber">⏳ Pending</span></div>
+          </div>
+          <button class="btn btn-outline btn-full" onclick="openModal('register')">Join Program</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Digital Products -->
+    <div id="tab-products" class="earn-content">
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-img" style="background:linear-gradient(135deg,#dbeafe,#ede9fe);">📘</div>
+          <div class="product-body">
+            <span class="tag">eBook</span>
+            <div class="product-title" style="margin-top:0.5rem;">Freelancing Mastery Guide 2026</div>
+            <p style="font-size:0.82rem;color:var(--text-secondary);margin-top:0.4rem;">Complete guide to landing high-paying freelance clients.</p>
+            <div class="product-price">
+              <span class="price">$29</span>
+              <span class="sales">🔥 342 sales</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img" style="background:linear-gradient(135deg,#d1fae5,#dbeafe);">📊</div>
+          <div class="product-body">
+            <span class="tag">Template</span>
+            <div class="product-title" style="margin-top:0.5rem;">Business Dashboard Templates</div>
+            <p style="font-size:0.82rem;color:var(--text-secondary);margin-top:0.4rem;">10 Notion + Excel templates for tracking income & expenses.</p>
+            <div class="product-price">
+              <span class="price">$19</span>
+              <span class="sales">⭐ 218 sales</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img" style="background:linear-gradient(135deg,#fce7f3,#fef3c7);">🎨</div>
+          <div class="product-body">
+            <span class="tag">Design Kit</span>
+            <div class="product-title" style="margin-top:0.5rem;">100+ Canva Social Media Templates</div>
+            <p style="font-size:0.82rem;color:var(--text-secondary);margin-top:0.4rem;">Ready-to-use templates for Instagram, LinkedIn & Twitter.</p>
+            <div class="product-price">
+              <span class="price">$39</span>
+              <span class="sales">🚀 501 sales</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img" style="background:linear-gradient(135deg,#fef3c7,#d1fae5);">🎓</div>
+          <div class="product-body">
+            <span class="tag">Course</span>
+            <div class="product-title" style="margin-top:0.5rem;">Affiliate Marketing Crash Course</div>
+            <p style="font-size:0.82rem;color:var(--text-secondary);margin-top:0.4rem;">Start earning $500/month with affiliate links in 30 days.</p>
+            <div class="product-price">
+              <span class="price">$97</span>
+              <span class="sales">💎 180 sales</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= DASHBOARD PREVIEW ======= -->
+<section id="dashboard" class="section-pad">
+  <div class="container">
+    <div class="section-eyebrow">Your Dashboard</div>
+    <h2 class="section-title">Everything in one place</h2>
+    <p class="section-sub">Track earnings, manage tasks, and withdraw funds — all from your personal dashboard.</p>
+
+    <div class="dashboard-preview reveal">
+      <div class="dp-header">
+        <div><h3>💼 My Earning Dashboard</h3><small>April 2026 · All time earnings: $3,284.50</small></div>
+        <button class="btn btn-ghost btn-sm" style="background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2);">+ Add Earning Source</button>
+      </div>
+
+      <div class="dp-stats">
+        <div class="dp-stat">
+          <div class="ds-icon">💰</div>
+          <div class="ds-val">$847</div>
+          <div class="ds-label">Earned This Week</div>
+          <div class="ds-change">↑ 23% vs last week</div>
+        </div>
+        <div class="dp-stat">
+          <div class="ds-icon">⏳</div>
+          <div class="ds-val">$342</div>
+          <div class="ds-label">Pending Payment</div>
+          <div class="ds-change" style="color:var(--warning);">3 tasks in review</div>
+        </div>
+        <div class="dp-stat">
+          <div class="ds-icon">🎯</div>
+          <div class="ds-val">12</div>
+          <div class="ds-label">Active Gigs</div>
+          <div class="ds-change">4 due this week</div>
+        </div>
+        <div class="dp-stat">
+          <div class="ds-icon">⭐</div>
+          <div class="ds-val">4.9</div>
+          <div class="ds-label">Client Rating</div>
+          <div class="ds-change">Top 5% earner</div>
+        </div>
+      </div>
+
+      <div class="dp-bottom">
+        <div class="dp-transactions">
+          <div class="dp-trans-title">Recent Transactions</div>
+          <div class="trans-item">
+            <div class="trans-left">
+              <div class="trans-icon" style="background:#d1fae5;">✍️</div>
+              <div><div class="trans-name">Blog Post — TechBlog Inc.</div><div class="trans-date">Today, 2:30 PM</div></div>
+            </div>
+            <div class="trans-amount credit">+$85.00</div>
+          </div>
+          <div class="trans-item">
+            <div class="trans-left">
+              <div class="trans-icon" style="background:#dbeafe;">🔗</div>
+              <div><div class="trans-name">Affiliate Commission — Shopify</div><div class="trans-date">Yesterday, 5:12 PM</div></div>
+            </div>
+            <div class="trans-amount credit">+$150.00</div>
+          </div>
+          <div class="trans-item">
+            <div class="trans-left">
+              <div class="trans-icon" style="background:#fce7f3;">📦</div>
+              <div><div class="trans-name">eBook Sale — Gumroad</div><div class="trans-date">Apr 1, 11:44 AM</div></div>
+            </div>
+            <div class="trans-amount credit">+$29.00</div>
+          </div>
+          <div class="trans-item">
+            <div class="trans-left">
+              <div class="trans-icon" style="background:#fee2e2;">💸</div>
+              <div><div class="trans-name">Withdrawal to PayPal</div><div class="trans-date">Mar 30, 9:00 AM</div></div>
+            </div>
+            <div class="trans-amount debit">−$500.00</div>
+          </div>
+        </div>
+
+        <div class="dp-payout">
+          <div class="dp-payout-title">Withdraw Earnings</div>
+          <div style="text-align:center;margin-bottom:1rem;">
+            <div style="font-size:2rem;font-weight:800;font-family:'Sora',sans-serif;color:#fff;">$342.00</div>
+            <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);">Available to withdraw</div>
+          </div>
+          <div class="payout-methods">
+            <div class="payout-method">
+              <div class="pm-left"><div class="pm-icon">🅿️</div><div><div class="pm-name">PayPal</div><div class="pm-min">Min $10</div></div></div>
+              <div class="pm-available">Available</div>
+            </div>
+            <div class="payout-method">
+              <div class="pm-left"><div class="pm-icon">🏦</div><div><div class="pm-name">Bank Transfer</div><div class="pm-min">Min $50</div></div></div>
+              <div class="pm-available">Available</div>
+            </div>
+            <div class="payout-method">
+              <div class="pm-left"><div class="pm-icon">₿</div><div><div class="pm-name">Crypto (USDT)</div><div class="pm-min">Min $20</div></div></div>
+              <div class="pm-available">Available</div>
+            </div>
+          </div>
+          <button class="withdraw-btn" onclick="openModal('register')">Request Withdrawal →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= PRICING ======= -->
+<section id="pricing" class="section-pad">
+  <div class="container text-center">
+    <div class="section-eyebrow">Membership Plans</div>
+    <h2 class="section-title">Invest in your earning potential</h2>
+    <p class="section-sub" style="margin:0 auto 1rem">Start free and upgrade as you grow. Premium members earn 3× more on average.</p>
+
+    <div class="pricing-grid reveal">
+      <!-- Free -->
+      <div class="pricing-card">
+        <div class="plan-name">Free</div>
+        <div class="plan-price"><sup>$</sup>0<sub>/mo</sub></div>
+        <div class="plan-tagline">Perfect to get started</div>
+        <div class="plan-features">
+          <div class="plan-feature has">✅ 5 gigs per month</div>
+          <div class="plan-feature has">✅ Basic affiliate access</div>
+          <div class="plan-feature has">✅ $10 min withdrawal</div>
+          <div class="plan-feature has">✅ Email support</div>
+          <div class="plan-feature">❌ Premium gigs</div>
+          <div class="plan-feature">❌ Priority matching</div>
+          <div class="plan-feature">❌ Digital product store</div>
+          <div class="plan-feature">❌ Analytics dashboard</div>
+        </div>
+        <button class="btn btn-outline btn-full" onclick="openModal('register')">Get Started Free</button>
+      </div>
+
+      <!-- Pro (featured) -->
+      <div class="pricing-card featured">
+        <div class="pricing-badge">🔥 Most Popular</div>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price"><sup>$</sup>19<sub>/mo</sub></div>
+        <div class="plan-tagline">For serious earners</div>
+        <div class="plan-features">
+          <div class="plan-feature has">✅ Unlimited gigs</div>
+          <div class="plan-feature has">✅ All affiliate programs</div>
+          <div class="plan-feature has">✅ Instant withdrawals</div>
+          <div class="plan-feature has">✅ Priority support</div>
+          <div class="plan-feature has">✅ Digital product store</div>
+          <div class="plan-feature has">✅ Analytics dashboard</div>
+          <div class="plan-feature has">✅ 0% platform fee</div>
+          <div class="plan-feature">❌ White-label store</div>
+        </div>
+        <button class="btn btn-white btn-full" onclick="openModal('register')">Start Pro — $19/mo</button>
+      </div>
+
+      <!-- Business -->
+      <div class="pricing-card">
+        <div class="plan-name">Business</div>
+        <div class="plan-price"><sup>$</sup>49<sub>/mo</sub></div>
+        <div class="plan-tagline">Scale your income</div>
+        <div class="plan-features">
+          <div class="plan-feature has">✅ Everything in Pro</div>
+          <div class="plan-feature has">✅ White-label store</div>
+          <div class="plan-feature has">✅ Team collaboration (5 seats)</div>
+          <div class="plan-feature has">✅ API access</div>
+          <div class="plan-feature has">✅ Custom domain</div>
+          <div class="plan-feature has">✅ Dedicated manager</div>
+          <div class="plan-feature has">✅ Early access features</div>
+          <div class="plan-feature has">✅ Advanced analytics</div>
+        </div>
+        <button class="btn btn-primary btn-full" onclick="openModal('register')">Start Business</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= TESTIMONIALS ======= -->
+<section id="testimonials" class="section-pad">
+  <div class="container">
+    <div class="section-eyebrow">Success Stories</div>
+    <h2 class="section-title">Real earners, real results</h2>
+
+    <div class="testi-grid reveal">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"I was skeptical at first, but after 3 months I replaced my day job income. The freelancing section alone has paid for itself 100x over."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#0ea5e9;">SA</div>
+          <div>
+            <div class="testi-name">Sarah A.</div>
+            <div class="testi-role">Content Writer, Lagos</div>
+          </div>
+          <div class="testi-earning">$2,400/mo</div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The affiliate program section is incredible. I'm making passive income while I sleep. Best investment I've made in my online career."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#10b981;">MR</div>
+          <div>
+            <div class="testi-name">Marco R.</div>
+            <div class="testi-role">Digital Marketer, Madrid</div>
+          </div>
+          <div class="testi-earning">$1,850/mo</div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Sold my first eBook within 48 hours of uploading it. The platform handles everything — payments, delivery, customer support."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#f59e0b;">PK</div>
+          <div>
+            <div class="testi-name">Priya K.</div>
+            <div class="testi-role">Product Creator, Mumbai</div>
+          </div>
+          <div class="testi-earning">$3,100/mo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= BLOG ======= -->
+<section id="blog" class="section-pad">
+  <div class="container">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:3rem;">
+      <div>
+        <div class="section-eyebrow">Blog & Tips</div>
+        <h2 class="section-title" style="margin-bottom:0;">Earning tips & strategies</h2>
+      </div>
+      <a href="#" class="btn btn-outline">View All Articles →</a>
+    </div>
+
+    <div class="blog-grid reveal">
+      <div class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,#dbeafe,#ede9fe);">💡</div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="tag">Freelancing</span><span>·</span><span>5 min read</span></div>
+          <div class="blog-title">10 High-Paying Freelance Skills to Learn in 2026</div>
+          <p class="blog-excerpt">AI tools have changed the market — here's which skills are booming and how to position yourself for maximum earnings.</p>
+        </div>
+        <div class="blog-footer">
+          <div class="blog-author"><span>👩</span> Emma Williams</div>
+          <span class="read-more">Read →</span>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,#d1fae5,#dbeafe);">🔗</div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="tag">Affiliate</span><span>·</span><span>8 min read</span></div>
+          <div class="blog-title">How to Make $1,000/Month with Affiliate Marketing (Beginner Guide)</div>
+          <p class="blog-excerpt">Step-by-step blueprint from zero to $1K/month using free traffic methods that actually work in 2026.</p>
+        </div>
+        <div class="blog-footer">
+          <div class="blog-author"><span>👨</span> James Park</div>
+          <span class="read-more">Read →</span>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,#fef3c7,#fce7f3);">📦</div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="tag">Products</span><span>·</span><span>6 min read</span></div>
+          <div class="blog-title">Sell Your First Digital Product This Weekend: A Complete Guide</div>
+          <p class="blog-excerpt">You don't need to be an expert. Here's how to create and sell a digital product in under 48 hours.</p>
+        </div>
+        <div class="blog-footer">
+          <div class="blog-author"><span>🧑</span> Aisha Okonkwo</div>
+          <span class="read-more">Read →</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ad Unit -->
+    <div class="ad-unit" style="margin-top:2rem;">
+      📢 Advertisement — Google Ads Placement (970×90 Leaderboard)
+    </div>
+  </div>
+</section>
+
+<!-- ======= CTA ======= -->
+<section class="section-pad">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div class="cta-text">
+        <h2>Ready to start earning online?</h2>
+        <p>Join 50,000+ people already making money on EarnFlow Hub. Free to start.</p>
+      </div>
+      <div class="cta-actions">
+        <button class="btn btn-white btn-lg" onclick="openModal('register')">🚀 &nbsp;Start For Free</button>
+        <a href="#how" class="btn btn-ghost btn-lg">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FOOTER ======= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#fff;stroke:#fff;stroke-width:0;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          EarnFlow Hub
+        </div>
+        <p>The all-in-one platform for earning money online through freelancing, affiliate marketing, and digital products.</p>
+        <div class="footer-social">
+          <div class="social-icon" title="Twitter">𝕏</div>
+          <div class="social-icon" title="Instagram">📸</div>
+          <div class="social-icon" title="LinkedIn">in</div>
+          <div class="social-icon" title="YouTube">▶</div>
+          <div class="social-icon" title="TikTok">♪</div>
+        </div>
+        <div style="margin-top:1.25rem;font-size:0.8rem;">
+          📧 <a href="mailto:hello@earnflowhub.com" style="color:rgba(255,255,255,0.55);transition:color 0.2s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">hello@earnflowhub.com</a><br>
+          📞 <span style="color:rgba(255,255,255,0.55);">+1 (888) 327-6569</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Earn</h4>
+        <ul>
+          <li><a href="#">Freelance Gigs</a></li>
+          <li><a href="#">Affiliate Programs</a></li>
+          <li><a href="#">Sell Digital Products</a></li>
+          <li><a href="#">Microtasks</a></li>
+          <li><a href="#">Referral Program</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Community Forum</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 EarnFlow Hub. All rights reserved. Built with ❤️ for online earners worldwide.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ======= AUTH MODAL ======= -->
+<div class="modal-overlay" id="authModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-logo">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#fff;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        Earn<span style="color:var(--primary)">Flow</span> Hub
+      </div>
+    </div>
+    <div class="auth-tabs">
+      <button class="auth-tab" id="tabLogin" onclick="switchAuth('login')">Log In</button>
+      <button class="auth-tab" id="tabRegister" onclick="switchAuth('register')">Create Account</button>
+    </div>
+
+    <!-- Login Form -->
+    <div id="formLogin">
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input class="form-input" type="email" placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Password</label>
+        <input class="form-input" type="password" placeholder="••••••••">
+        <div class="form-hint"><a href="#" style="color:var(--primary)">Forgot password?</a></div>
+      </div>
+      <button class="btn btn-primary btn-full" onclick="handleAuth('login')" style="margin-top:0.5rem;">Log In to Dashboard</button>
+      <div class="divider"><span>or continue with</span></div>
+      <div class="social-btns">
+        <button class="social-btn">🌐 Google</button>
+        <button class="social-btn">👔 LinkedIn</button>
+      </div>
+    </div>
+
+    <!-- Register Form -->
+    <div id="formRegister" class="hidden">
+      <div class="form-group">
+        <label class="form-label">Full Name</label>
+        <input class="form-input" type="text" placeholder="Your full name">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input class="form-input" type="email" placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Password</label>
+        <input class="form-input" type="password" placeholder="At least 8 characters">
+        <div class="form-hint">Must include letters, numbers and a special character</div>
+      </div>
+      <div class="form-group" style="display:flex;align-items:flex-start;gap:10px;">
+        <input type="checkbox" id="terms" style="margin-top:3px;accent-color:var(--primary);">
+        <label for="terms" style="font-size:0.8rem;color:var(--text-secondary);">I agree to the <a href="#" style="color:var(--primary)">Terms of Service</a> and <a href="#" style="color:var(--primary)">Privacy Policy</a></label>
+      </div>
+      <button class="btn btn-primary btn-full" onclick="handleAuth('register')" style="margin-top:0.5rem;">🚀 Create Free Account</button>
+      <div class="divider"><span>or sign up with</span></div>
+      <div class="social-btns">
+        <button class="social-btn">🌐 Google</button>
+        <button class="social-btn">👔 LinkedIn</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Success Toast -->
+<div id="toast" style="position:fixed;bottom:2rem;right:2rem;z-index:3000;background:#0f172a;color:#fff;padding:14px 22px;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);display:none;align-items:center;gap:12px;font-family:'Sora',sans-serif;font-size:0.85rem;font-weight:600;border-left:4px solid var(--success);max-width:320px;">
+  <span style="font-size:1.2rem;">🎉</span>
+  <div id="toastMsg">Welcome to EarnFlow Hub!</div>
+</div>
+
+<script>
+// ====== NAVBAR ======
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// ====== MOBILE MENU ======
+function toggleMenu() {
+  const m = document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+}
+
+// ====== TABS ======
+function switchTab(tab, btn) {
+  document.querySelectorAll('.earn-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.earn-tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ====== MODAL ======
+function openModal(type) {
+  document.getElementById('authModal').classList.add('open');
+  switchAuth(type);
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('authModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function switchAuth(type) {
+  const isLogin = type === 'login';
+  document.getElementById('formLogin').classList.toggle('hidden', !isLogin);
+  document.getElementById('formRegister').classList.toggle('hidden', isLogin);
+  document.getElementById('tabLogin').classList.toggle('active', isLogin);
+  document.getElementById('tabRegister').classList.toggle('active', !isLogin);
+}
+
+document.getElementById('authModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ====== HANDLE AUTH (Demo) ======
+function handleAuth(type) {
+  closeModal();
+  showToast(type === 'register' 
+    ? '🎉 Account created! Welcome to EarnFlow Hub!' 
+    : '👋 Welcome back! Redirecting to dashboard...');
+}
+
+// ====== TOAST ======
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  document.getElementById('toastMsg').textContent = msg;
+  t.style.display = 'flex';
+  t.style.animation = 'none';
+  setTimeout(() => {
+    t.style.transition = 'opacity 0.4s';
+    t.style.opacity = '1';
+  }, 10);
+  setTimeout(() => {
+    t.style.opacity = '0';
+    setTimeout(() => { t.style.display = 'none'; t.style.opacity = '1'; }, 400);
+  }, 4000);
+}
+
+// ====== SCROLL REVEAL ======
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 100);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ====== ACTIVE NAV LINK ======
+const sections = document.querySelectorAll('section[id], footer[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+const activeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      const link = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+      if (link) link.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('section[id]').forEach(s => activeObserver.observe(s));
+</script>
+</body>
+</html>
